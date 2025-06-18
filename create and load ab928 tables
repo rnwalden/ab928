@@ -1,0 +1,252 @@
+CREATE TABLE ADT_LOCAL_DEGREE_MAPPING (
+    MAJOR_ID NUMBER ,
+    MAJOR_CODE VARCHAR2(6),
+    ADT_MAJOR_CODE VARCHAR2(6)
+);
+CREATE SEQUENCE ADT_LOCAL_DEGREE_MAPPING_SEQ
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+
+CREATE TABLE LOCAL_DEGREES (
+    LOCAL_DEGREE_ID NUMBER ,
+    LOCAL_DEGREE VARCHAR2(6)
+);
+CREATE SEQUENCE LOCAL_DEGREES_SEQ
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE TABLE ADT_DEGREES (
+    ADT_DEGREE_ID NUMBER ,
+    ADT_DEGREE VARCHAR2(6)
+);
+
+CREATE SEQUENCE ADT_DEGREES_SEQ
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+CREATE TABLE CTE (
+   CTE_ID NUMBER ,
+    MAJ_CODE VARCHAR2(6)
+);
+
+CREATE SEQUENCE CTE_SEQ
+START WITH 1
+INCREMENT BY 1
+NOMAXVALUE;
+
+--------------------------------------------------------
+--insert scripts for tables with given data as of now
+
+insert into ADT_LOCAL_DEGREE_MAPPING values(ADT_LOCAL_DEGREE_MAPPING_SEQ.nextval,'ADMJ','ADJT');
+insert into ADT_LOCAL_DEGREE_MAPPING values(ADT_LOCAL_DEGREE_MAPPING_SEQ.nextval,'BIOL','BIOT');
+insert into ADT_LOCAL_DEGREE_MAPPING values(ADT_LOCAL_DEGREE_MAPPING_SEQ.nextval,'CFE','ECET');
+insert into ADT_LOCAL_DEGREE_MAPPING values(ADT_LOCAL_DEGREE_MAPPING_SEQ.nextval,'BUS','BUS2');
+COMMIT;
+---------------------
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ADMJ');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CAN');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CFE');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CGDP');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CHCS');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'DAN');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'DPI');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'DSA');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'DSI');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'GD');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'HMNS');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'IMW');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'INA');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'LAAH');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'LAMS');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'LASB');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'MCOM');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'PHTC');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'SAG');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'VDP');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'AAA');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'AAP');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'AAT');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ABD');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ABDC');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ABDR');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ACR');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ACRC');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ACRR');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'AFAB');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'AUS');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'BIOL');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'BIP');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'BOK');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'BUS');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CA');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CHEM');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'CN');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'COEN');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ELE');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ELT');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ENRE');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ENRM');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'FT');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'ITCD');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'MA');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'PM');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'RADT');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'WFT');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'WLD');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'RE');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'RN');
+insert into LOCAL_DEGREES values(LOCAL_DEGREES_SEQ.nextval,'RSPT');
+COMMIT;
+----------------------------------------------------------------------------
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'KINT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'LPST');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'MUST');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'PHIT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'POST');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'PSYT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'SOCT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'SPNT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'THAT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'ADJT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'BIOT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'BUS2');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'CST');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'ECET');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'FTVT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'GET');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'MATT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'NDT');
+insert into adt_DEGREES values(ADT_DEGREES_SEQ.nextval,'PHYT');
+Commit
+--------------------------------------------------------------
+insert into CTE values(CTE_SEQ.nextval,'AFAB');
+insert into CTE values(CTE_SEQ.nextval,'AFA1');
+insert into CTE values(CTE_SEQ.nextval,'AAT');
+insert into CTE values(CTE_SEQ.nextval,'ACR');
+insert into CTE values(CTE_SEQ.nextval,'ACR1');
+insert into CTE values(CTE_SEQ.nextval,'ACR2');
+insert into CTE values(CTE_SEQ.nextval,'ABD');
+insert into CTE values(CTE_SEQ.nextval,'ABD1');
+insert into CTE values(CTE_SEQ.nextval,'ABD2');
+insert into CTE values(CTE_SEQ.nextval,'AUT');
+insert into CTE values(CTE_SEQ.nextval,'AUT1');
+insert into CTE values(CTE_SEQ.nextval,'AUT2');
+insert into CTE values(CTE_SEQ.nextval,'DRF');
+insert into CTE values(CTE_SEQ.nextval,'DRF1');
+insert into CTE values(CTE_SEQ.nextval,'ELT');
+insert into CTE values(CTE_SEQ.nextval,'ELT1');
+insert into CTE values(CTE_SEQ.nextval,'WLD');
+insert into CTE values(CTE_SEQ.nextval,'WLD1');
+insert into CTE values(CTE_SEQ.nextval,'AAT1');
+insert into CTE values(CTE_SEQ.nextval,'AAT2');
+insert into CTE values(CTE_SEQ.nextval,'AAT3');
+insert into CTE values(CTE_SEQ.nextval,'AAA');
+insert into CTE values(CTE_SEQ.nextval,'AAP');
+insert into CTE values(CTE_SEQ.nextval,'ABDR');
+insert into CTE values(CTE_SEQ.nextval,'AUTD');
+insert into CTE values(CTE_SEQ.nextval,'ACRR');
+insert into CTE values(CTE_SEQ.nextval,'ACRC');
+insert into CTE values(CTE_SEQ.nextval,'ABDC');
+insert into CTE values(CTE_SEQ.nextval,'ACR3');
+insert into CTE values(CTE_SEQ.nextval,'ABD3');
+insert into CTE values(CTE_SEQ.nextval,'AA');
+insert into CTE values(CTE_SEQ.nextval,'ELE');
+insert into CTE values(CTE_SEQ.nextval,'ELE1');
+insert into CTE values(CTE_SEQ.nextval,'AFMT');
+insert into CTE values(CTE_SEQ.nextval,'AFX');
+insert into CTE values(CTE_SEQ.nextval,'IMTA');
+insert into CTE values(CTE_SEQ.nextval,'ANDI');
+insert into CTE values(CTE_SEQ.nextval,'ALM');
+insert into CTE values(CTE_SEQ.nextval,'MSAM');
+insert into CTE values(CTE_SEQ.nextval,'AUS');
+insert into CTE values(CTE_SEQ.nextval,'AUS1');
+insert into CTE values(CTE_SEQ.nextval,'CADC');
+insert into CTE values(CTE_SEQ.nextval,'CAMF');
+insert into CTE values(CTE_SEQ.nextval,'CADS');
+insert into CTE values(CTE_SEQ.nextval,'CADM');
+insert into CTE values(CTE_SEQ.nextval,'AAS');
+insert into CTE values(CTE_SEQ.nextval,'AWS');
+
+Commit
+----------------------------------------------------------------------
+
+CREATE TABLE ab928_error_log_table (
+  error_code    NUMBER,
+  error_message VARCHAR2(4000),
+  error_from    VARCHAR2(25),
+  timestamp     TIMESTAMP
+);
+
+---------------------------------------------------
+CREATE OR REPLACE PROCEDURE log_error (
+  p_error_code    IN N1MBER,
+  p_error_message IN VARCHAR2,
+  from_error IN VARCHAR2
+) IS
+PRAGMA AUTONOMOUS_TRANSACTION;
+BEGIN
+  INSERT INTO AB928_ERROR_LOG_TABLE  (error_code, error_message,error_from, timestamp)
+  VALUES (p_error_code, p_error_message,from_error, SYSTIMESTAMP);
+  COMMIT;
+END;
+--------------------------------------------------------------------------------
+CREATE TABLE AB928_STAGING_DATA(
+AB928_PIDM                  NUMBER(8) NOT NULL,
+AB928_TERM_CODE_EFF      VARCHAR2(6 CHAR)    NOT NULL,
+AB928_SOURCE  VARCHAR2(8 CHAR),
+AB928_EXCEPTIONS_PROCESSED NUMBER(1),
+AB928_ADT_PROCESSED NUMBER(1)
+);
+----------------------------------------------------------
+CREATE or REPLACE TRIGGER avc_sgbstdn 
+AFTER INSERT  or update ON sgbstdn 
+FOR EACH ROW
+WHEN (NEW.SGBSTDN_EGOL_CODE='A')
+DECLARE
+    BEGIN 
+    INSERT INTO AB928_STAGING_DATA(AB928_PIDM,AB928_TERM_CODE_EFF,AB928_SOURCE,AB928_EXCEPTIONS_PROCESSED,AB928_ADT_PROCESSED) 
+    VALUES(:NEW.SGBSTDN_PIDM,:NEW.SGBSTDN_TERM_CODE_EFF,'SGBSTDN',0,0);
+    EXCEPTION
+    WHEN OTHERS THEN
+    log_error(SQLCODE, SQLERRM,'avc_sgbstdn_tRIGGER');
+   
+END;
+---------------------------------------------------------------------------------------------------------
+create or replace TRIGGER avc_SVREDGL
+AFTER INSERT OR UPDATE ON SVREDGL
+FOR EACH ROW
+WHEN (NEW.SVREDGL_GOAL_CODE = 'A' AND NEW.SVREDGL_GOAL_OPT = 'P')
+DECLARE
+BEGIN
+   UPDATE AB928_STAGING_DATA
+    SET AB928_SOURCE = 'UPSVREDG',
+        AB928_EXCEPTIONS_PROCESSED = 0,
+        AB928_ADT_PROCESSED = 0
+    WHERE AB928_PIDM = :NEW.SVREDGL_PIDM
+      AND AB928_TERM_CODE_EFF = :NEW.SVREDGL_EFF_TERM;
+
+    IF SQL%ROWCOUNT = 0 THEN
+
+        INSERT INTO AB928_STAGING_DATA (
+            AB928_PIDM,
+            AB928_TERM_CODE_EFF,
+            AB928_SOURCE,
+            AB928_EXCEPTIONS_PROCESSED,
+            AB928_ADT_PROCESSED
+        ) VALUES (
+            :NEW.SVREDGL_PIDM,
+            :NEW.SVREDGL_EFF_TERM,
+            'SVREDGL',
+            0,
+            0
+        );
+    END IF;
+EXCEPTION
+    WHEN OTHERS THEN
+        log_error(SQLCODE, SQLERRM, 'avc_SVREDGL');
+END;
+-------------------------------------------------------------------------------------

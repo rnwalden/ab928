@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+#
+# Programmer    : Sumanth Alluri
+# Date          : 06/17/2024
+# Description   : This script will AB928 data  file.
+
+ORACLE_SID=$1; export ORACLE_SID
+LOG="/u02/sct/local/AVC_OUTPUT/AB928/ab928.log"
+exec > $LOG 2>&1
+. oraenv_local
+
+
+dat=$(/usr/bin/cat /home/avcron/adv.dat)
+
+echo "The current database is $ORACLE_SID"
+
+dat=$(cat /home/avcron/adv.dat)
+
+echo "Now changing the data and the performing the exceptions and the major change."
+cd /u02/sct/local/exe
+sqlplus -s avc/$dat @generate_ab928.sql
+
+echo "AB928 exception handing is done"
+
+echo "All Changes are DONE."
